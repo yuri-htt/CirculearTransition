@@ -5,10 +5,8 @@ Create a Circular Transition Animation by using "Custom UIViewController Transit
 
 iOS 7から、画面遷移のアニメーションをカスタマイズできるようになりました。
 
-今回はこちらのチュートリアル動画を参考に、ボタンに画面遷移のアニメーションを実装しました。  
-Youtube------------------------------------------------------------------------------
- https://www.youtube.com/watch?v=-BiGO7CJZ7Q&list=PLY1P2_piiWEaaeO49ria36p6lQ1uk0q_F
--------------------------------------------------------------------------------------
+今回はこちらのチュートリアル動画を参考に、ボタンに画面遷移のアニメーションを実装しました。   
+<https://www.youtube.com/watch?v=-BiGO7CJZ7Q&list=PLY1P2_piiWEaaeO49ria36p6lQ1uk0q_F>
 
 
 ##【関連プロトコル】
