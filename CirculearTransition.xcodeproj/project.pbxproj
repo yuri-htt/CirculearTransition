@@ -25,7 +25,7 @@
 		DAD0ADDF1DE7401A00FE1FF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAD0ADE11DE7401A00FE1FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAD0ADE71DE7421400FE1FF4 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		DAD0ADE91DE7447200FE1FF4 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
+		DAD0ADE91DE7447200FE1FF4 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircularTransition.swift; path = ../CircularTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +42,6 @@
 		DAD0ADC91DE7401A00FE1FF4 = {
 			isa = PBXGroup;
 			children = (
-				DAD0ADE91DE7447200FE1FF4 /* CircularTransition.swift */,
 				DAD0ADD41DE7401A00FE1FF4 /* CirculearTransition */,
 				DAD0ADD31DE7401A00FE1FF4 /* Products */,
 			);
@@ -59,6 +58,7 @@
 		DAD0ADD41DE7401A00FE1FF4 /* CirculearTransition */ = {
 			isa = PBXGroup;
 			children = (
+				DAD0ADE91DE7447200FE1FF4 /* CircularTransition.swift */,
 				DAD0ADD51DE7401A00FE1FF4 /* AppDelegate.swift */,
 				DAD0ADD71DE7401A00FE1FF4 /* ViewController.swift */,
 				DAD0ADD91DE7401A00FE1FF4 /* Main.storyboard */,
@@ -305,6 +305,7 @@
 				DAD0ADE61DE7401A00FE1FF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

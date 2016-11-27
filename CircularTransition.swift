@@ -31,8 +31,8 @@ class CircularTransition: NSObject {
 }
 
 //http://qiita.com/kitoko552/items/4c0e411ff6224090db87
-//UIViewControllerAnimatedTransitioningを使うと簡単に画面遷移のあイメーションが作成できる
-//必須メソッドは２つ
+//UIViewControllerAnimatedTransitioningを使うと簡単に画面遷移のアニメーションが作成できる
+//必須メソッドは下記の２つ
 extension CircularTransition: UIViewControllerAnimatedTransitioning {
     
     //アニメーションにかける時間
@@ -93,11 +93,19 @@ extension CircularTransition: UIViewControllerAnimatedTransitioning {
                     returningView.center = self.startingPoint
                     returningView.alpha = 0
                     
-                    if transitionMode == .pop {
+                    if self.transitionMode == .pop {
                         containerView.insertSubview(returningView, belowSubview: returningView)
                         containerView.insertSubview(self.circle, belowSubview: returningView)
                     }
-                    }, completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
+                    }, completion: { (success:Bool) in
+                        returningView.center = viewCenter
+                        returningView.removeFromSuperview()
+                        
+                        self.circle.removeFromSuperview()
+                        
+                        transitionContext.completeTransition(success)
+                        
+                })
             }
             
         }
