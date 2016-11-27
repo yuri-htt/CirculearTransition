@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Op1-Fs-2TX">
-                                <frame key="frameInset" minX="49.85%" minY="50" width="40" height="40"/>
+                                <frame key="frameInset" minX="49.70%" minY="50" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.37481726990000003" green="0.77187824940000005" blue="0.53576853329999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
@@ -57,13 +57,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1oL-bz-wFI">
+                                <color key="backgroundColor" red="0.37647058820000001" green="0.7725490196" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Cb-H5-kyK">
-                                <frame key="frameInset" minX="49.85%" minY="50" width="40" height="40"/>
+                                <frame key="frameInset" minX="49.55%" minY="50" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.37481726990000003" green="0.77187824940000005" blue="0.53576853329999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
-                                <state key="normal" title="M">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="D">
+                                    <color key="titleColor" red="0.37647058820000001" green="0.7725490196" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="dismissSecondVC:" destination="gFO-Sc-xKl" eventType="touchUpInside" id="8MC-gK-0Xa"/>
@@ -71,6 +74,12 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oJk-0G-FcT" firstAttribute="top" secondItem="1oL-bz-wFI" secondAttribute="bottom" id="9GP-Ma-AZw"/>
+                            <constraint firstAttribute="trailing" secondItem="1oL-bz-wFI" secondAttribute="trailing" id="cHJ-yM-43q"/>
+                            <constraint firstItem="1oL-bz-wFI" firstAttribute="leading" secondItem="ISA-8g-BIz" secondAttribute="leading" id="dqk-O9-2D4"/>
+                            <constraint firstItem="1oL-bz-wFI" firstAttribute="top" secondItem="ISA-8g-BIz" secondAttribute="top" id="mQf-bU-voA"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="dismissButton" destination="5Cb-H5-kyK" id="H90-H2-WHz"/>
@@ -78,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXh-u3-1PI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="858" y="135"/>
+            <point key="canvasLocation" x="856.79999999999995" y="134.48275862068968"/>
         </scene>
     </scenes>
     <resources>
