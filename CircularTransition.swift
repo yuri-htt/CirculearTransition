@@ -5,6 +5,7 @@
 //  Created by 田山　由理 on 2016/11/25.
 //  Copyright © 2016年 Yuri Tayama. All rights reserved.
 //
+//iOS7から画面遷移のアニメーションが可能になった
 
 import UIKit
 
@@ -12,7 +13,10 @@ class CircularTransition: NSObject {
 
     var circle = UIView()
     
-    //開始位置が変更されたらセンターも同じ場所とする
+    //プロパティ監視が呼び出される/呼び出されないについて
+    //http://qiita.com/takabosoft/items/b3af8b30a8c5111f4fce
+    //開始位置・円の中央の座標を(0,0)で初期化
+    //以降startingPointに値が設定された場合はcircle.centerにも同じ座標を設定
     var startingPoint = CGPoint.zero {
         didSet {
             circle.center = startingPoint
@@ -30,9 +34,8 @@ class CircularTransition: NSObject {
     var transitionMode:CirclarTransitionMode = .present
 }
 
-//http://qiita.com/kitoko552/items/4c0e411ff6224090db87
-//UIViewControllerAnimatedTransitioningを使うと簡単に画面遷移のアニメーションが作成できる
-//必須メソッドは下記の２つ
+//画面遷移時に用いるアニメーションの実態をアニメーションコントローラ(UIViewControllerAnimatedTransitioningを採用したクラス)で実装
+//CircularTransition = アニメーションコントローラ
 extension CircularTransition: UIViewControllerAnimatedTransitioning {
     
     //アニメーションにかける時間
@@ -42,24 +45,28 @@ extension CircularTransition: UIViewControllerAnimatedTransitioning {
     
     //具体的なアニメーションの内容
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        
+        // 画面遷移コンテキストからコンテナビューを取得
         let containerView = transitionContext.containerView
         
         if transitionMode == .present {
-            //多分遷移先のVC
+
+            //遷移先のVC
+            //引数であるtransitionContext（システムが作成する画面遷移コンテキスト）から遷移元、遷移先のビューコントローラを取得
             if let presentedView = transitionContext.view(forKey: UITransitionContextViewKey.to) {
+                
                 let viewCenter = presentedView.center
                 let viewSize = presentedView.frame.size
 
+                //アニメーションコントローラを用いたカスタム画面遷移のアニメーションは、コンテナビューと呼ばれるビュー上で繰り広げられる。
+                //ここでは円形のviewと遷移先のviewをそれぞれ生成してcontainerViewにaddSubviewすることで画面遷移する。
                 circle = UIView()
-                
                 circle.frame = frameForCircle(withViewController: viewCenter, size: viewSize, startPoint: startingPoint)
-                
                 circle.layer.cornerRadius = circle.frame.size.height / 2
                 circle.center = startingPoint
                 circle.backgroundColor = circlarColor
                 circle.transform = CGAffineTransform(scaleX:0.001, y:0.001)
                 containerView.addSubview(circle)
-                
                 
                 presentedView.center = startingPoint
                 presentedView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
@@ -97,13 +104,14 @@ extension CircularTransition: UIViewControllerAnimatedTransitioning {
                         containerView.insertSubview(returningView, belowSubview: returningView)
                         containerView.insertSubview(self.circle, belowSubview: returningView)
                     }
-                    }, completion: { (success:Bool) in
-                        returningView.center = viewCenter
-                        returningView.removeFromSuperview()
+                }, completion: { (success:Bool) in
+                    
+                    //成功したら円と遷移先のVCをViewの階層から削除
+                    returningView.center = viewCenter
+                    returningView.removeFromSuperview()
+                    self.circle.removeFromSuperview()
                         
-                        self.circle.removeFromSuperview()
-                        
-                        transitionContext.completeTransition(success)
+                    transitionContext.completeTransition(success)
                         
                 })
             }

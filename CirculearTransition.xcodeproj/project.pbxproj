@@ -58,14 +58,14 @@
 		DAD0ADD41DE7401A00FE1FF4 /* CirculearTransition */ = {
 			isa = PBXGroup;
 			children = (
-				DAD0ADE91DE7447200FE1FF4 /* CircularTransition.swift */,
 				DAD0ADD51DE7401A00FE1FF4 /* AppDelegate.swift */,
 				DAD0ADD71DE7401A00FE1FF4 /* ViewController.swift */,
+				DAD0ADE71DE7421400FE1FF4 /* SecondViewController.swift */,
+				DAD0ADE91DE7447200FE1FF4 /* CircularTransition.swift */,
 				DAD0ADD91DE7401A00FE1FF4 /* Main.storyboard */,
 				DAD0ADDC1DE7401A00FE1FF4 /* Assets.xcassets */,
 				DAD0ADDE1DE7401A00FE1FF4 /* LaunchScreen.storyboard */,
 				DAD0ADE11DE7401A00FE1FF4 /* Info.plist */,
-				DAD0ADE71DE7421400FE1FF4 /* SecondViewController.swift */,
 			);
 			path = CirculearTransition;
 			sourceTree = "<group>";

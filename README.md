@@ -17,18 +17,15 @@ iOS 7から、画面遷移のアニメーションをカスタマイズできる
 
 
 
-###【実装手順】
-####1)アニメーションコントローラの作成
+###【実装内容】
+####アニメーションコントローラの作成
 画面遷移時に用いるアニメーションの実態をUIViewControllerAnimatedTransitioningを採用したクラスで実装する。  
 このとき、UIViewControllerAnimatedTransitioningを採用したクラスのことをアニメーションコントローラと呼ぶ。  
 
-####2)画面遷移コンテキストに遷移情報を記載
-UIViewControllerContextTransitioningを採用したオブジェクトに遷移情報を記載。  
-この時、UIViewControllerContextTransitioningを採用したオブジェクトのことを画面遷移コンテキストと呼ぶ。  
-画面遷移コンテキストは遷移先、遷移元などの画面遷移に必要な情報を管理する。  
-
-####3)アニメーションコントローラーを指定
+####アニメーションコントローラーを指定
 遷移元のVCで画面遷移デリゲート(UIViewControllerTransitioningDelegate)を採用し、画面遷移時のアニメーションコントローラを指定する。  
 
 
-
+*画面遷移コンテキスト*
+UIViewControllerContextTransitioningを採用したオブジェクトのことを画面遷移コンテキストと呼ぶ。  
+画面遷移コンテキストは遷移先、遷移元などの画面遷移に必要な情報を管理するオブジェクトで、システムが作成する。

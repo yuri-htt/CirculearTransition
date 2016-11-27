@@ -8,6 +8,7 @@
 
 import UIKit
 
+//UIViewControllerTransitioningDelegate:遷移元のVCで採用し、遷移時のアニメーションコントローラを指定する。
 class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
 
     @IBOutlet weak var menuButton: UIButton!
@@ -42,6 +43,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
         
         return transition
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
